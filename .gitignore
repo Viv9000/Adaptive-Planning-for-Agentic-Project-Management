@@ -1,0 +1,19 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Local virtual environments
+.venv/
+venv/
+
+# Run results, checkpoints and regenerated instances
+/results/
+checkpoints/
+/dataset/regenerated/
+
+# A downloaded MSLIB archive kept in the repository
+/dataset/generator/mslib/
+
+# Local secrets
+.env
+.env.*

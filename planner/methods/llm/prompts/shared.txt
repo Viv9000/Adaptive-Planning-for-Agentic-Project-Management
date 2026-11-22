@@ -1,0 +1,110 @@
+Write a Python scheduler for stochastic multi-mode resource-constrained project scheduling.
+Maximize the probability that ALL tasks finish by the supplied deadline.
+Earlier completion receives no additional reward. Task durations are independent.
+All allowed modes are already supplied; never invent another team or mode.
+
+INTERFACE
+Return one JSON object {"source": "complete Python module"}, with no Markdown fences.
+Define build_policy(project, static_features, limits), returning a callable:
+    select_action(observation) -> integer action_id
+static_features is the initial observation's features dictionary.
+project, static_features, limits, the observation and every nested value are plain
+JSON data: dicts, lists, ints, floats, None. They are NOT objects, so write
+project["deadline"], never project.deadline. build_policy must RETURN select_action.
+Attach select_action.start_episode(policy_seed), even if it does nothing, to reset
+all mutable episode state and any independent internal RNG before every episode.
+Immutable preprocessing may be reused. Do not learn across evaluation episodes.
+Every selection must be based on the current complete observation and project,
+not on an assumption that this function's earlier recommendation was executed.
+After a failed selection the host may rebuild the worker and reset episode state.
+
+LIMITS AND FAILURE RULE
+Initialization (module loading and build_policy together): 60 wall-clock seconds.
+Each selection: 1 wall-clock second, including request serialization, IPC,
+worker parsing, computation and response validation; host feature construction
+is timed and reported separately. Numerical libraries are loaded before build.
+Episode reset has a separate 1-second wall-clock limit.
+One CPU thread and 4 GiB address space per isolated worker.
+You may use preprocessing, optimization, internal simulations, lookahead or search.
+Use time.monotonic to leave time to return a valid action.
+A timeout, exception, input mutation, malformed result or illegal action causes
+greedy fallback FOR THAT SELECTION and is counted. There are NO regeneration or
+correction opportunities. Unusable source or initialization uses greedy throughout
+that program/project evaluation. A policy worker killed by a selection timeout is
+rebuilt before the next attempted selection; no code changes are made.
+Return an action even after the deadline; episodes continue to completion.
+
+PROJECT SCHEMA (a dict; zero-based table indices, stable within a project)
+project["deadline"]: integer quarter-day units. Every time uses the same unit.
+project["workers"]: worker count; each worker has capacity 1 (=4 dedication quarters).
+project["predecessors"][t]: predecessor task indices.
+project["teams"][q]: four worker lists, for dedication 0.25, 0.5, 0.75, 1 respectively.
+An omitted worker contributes zero dedication. Example: teams[q]=[[],[],[],[3,5]]
+means team q is workers 3 and 5, each at full dedication 1. teams is indexed by
+team q (the last entry of a mode), then by dedication level, then a list of workers.
+project["modes"][t][m]: [a,b,c,q], beta-PERT minimum/mode/maximum and team index.
+PERT has shape weight 4: alpha=1+4*(b-a)/(c-a), beta=1+4*(c-b)/(c-a).
+Simulator duration is ceil(max(0,X)); [0,0,0,q] means deterministic zero.
+Keep precedence and zero-duration milestones; they still require START and completion.
+
+OBSERVATION SCHEMA
+The observation is a dict with keys "time", "completed", "active", "legal_actions" and
+"features"; features is a dict with keys "tasks", "modes", "workers", "global_inputs",
+"free_dedication" and "max_modes" (the same keys as static_features).
+time: current project time; completed: completed task indices.
+active: rows [task,mode,start_time,pending], where pending is 0 or 1.
+Unlisted tasks are unstarted. Durations of active tasks are NEVER observable.
+pending=1 means newly started and not yet checked by ADVANCE: zero is possible.
+pending=0 means observed still running: condition duration on D > time-start_time.
+legal_actions: rows [action_id,[task,mode]], or [action_id,null] for ADVANCE.
+Return exactly one supplied action_id, as a built-in Python int.
+START reserves dedication immediately without advancing time; predecessors must
+already be completed. ADVANCE advances to the next completion and reveals all ties.
+Tasks cannot be interrupted or change mode. Repeated STARTs build an assignment set.
+An empty assignment set is allowed only if some task is active.
+Capacity tolerance is 1e-9. Completion exactly at the deadline succeeds.
+The host executes a single forced legal action without calling the scheduler.
+
+NETWORK FEATURES (the final baseline_features_risk computations, no approximations)
+features.tasks[t]: [unstarted,active,completed,elapsed,pending,ready,any_fitting_mode,
+                   critical_path,slack,successor_share,shortest_mean_duration]
+features.modes[t][m]: [exists,fits,selected,original_lower,original_upper,original_mean,
+                      remaining_lower,remaining_upper,remaining_mean,total_dedication,p90,p99]
+features.workers[w]: [free_dedication, fitting_mode_dedication_sum/max_modes]
+features.global_inputs: [time,project_remaining,project_slack,completed_share,active_share]
+features.free_dedication: free capacity per worker, in units of full-time dedication.
+features.max_modes: padded network mode width; absent mode rows are zero padding.
+Only actual modes are transmitted; omitted padding can be reconstructed exactly.
+Status/ready/fits/selected/exists flags are numeric 0 or 1. Feature times, elapsed,
+and duration summaries are divided by the project deadline; raw times are not.
+Original summaries are lower/upper/mean of rounded duration; p90,p99 are original
+rounded-duration quantiles. Remaining summaries condition a running selected mode
+on survival; completed modes and unselected modes of active tasks have zero summaries.
+critical_path is the task's own remaining mean (shortest mean if unstarted), plus
+the longest successor chain using shortest original means; zero if completed.
+slack=1-time-critical_path for unfinished tasks, zero for completed tasks.
+successor_share is the fraction of tasks descending from this task.
+project_remaining is the largest critical_path among active or ready tasks;
+project_slack=1-time-project_remaining. These are summaries, not success probabilities.
+All global, task, mode, worker and free-capacity inputs are provided; no learned
+weights, policy recommendations, solver plans or hidden future realizations are given.
+
+SMALL SYNTHETIC SCHEMA EXAMPLE (not a real development or test project)
+{"deadline":40,"workers":2,"predecessors":[[],[0],[0],[1,2]],"teams":[[[],[],[],[]],[[],[],[],[0]],[[],[1],[],[]]],"modes":[[[0,0,0,0]],[[2,4,9,1],[3,5,7,2]],[[1,3,8,2]],[[0,0,0,0]]]}
+Example legal_actions after task 0 completes: [[1,[1,0]],[2,[1,1]],[3,[2,0]]].
+If task 1/mode 0 starts, task 2/mode 0 can also start: their workers differ.
+ADVANCE is a legal option once a task is active; its actual ID comes from the list.
+
+EXECUTION ENVIRONMENT
+Imports: __future__, math, cmath, statistics, random, time, collections, itertools,
+functools, heapq, bisect, operator, copy, typing, dataclasses, enum, fractions,
+decimal, numpy, scipy. Place all project computation inside build_policy. Do not import json or os.
+Module top level: imports, function/class definitions and literal constants only.
+No calls, no select_action assignment, no __main__ block, no hard-coded project data.
+policy_seed is an integer up to 2**63-1: use numpy.random.default_rng(policy_seed)
+or random.Random(policy_seed), never numpy.random.seed.
+Do not wrap the JSON in Markdown fences; the "source" string must be non-empty.
+No network, API calls, credentials, repository imports, filesystem inspection,
+subprocesses, background workers, access to the host simulator or its random state.
+Never mutate input objects. Use an independent local RNG reset by policy_seed.
+Include short comments explaining the algorithm and numerical approximations.

@@ -1,0 +1,2086 @@
+# Configuration
+
+```yaml
+generator: dataset.generator.generator
+source_id: MSLIB_Set4_96
+settings:
+  seed: 0
+  time_unit: 4
+  mode_cap: 32
+  uncertainty: 2.0
+  mode_factor_sigma: 0.15
+  level_effect: 0.1
+  efficiency_bounds:
+  - 0.7
+  - 1.4
+  risk_classes:
+  - - 0.5
+    - 0.1
+    - 0.3
+  - - 0.35
+    - 0.15
+    - 0.6
+  - - 0.15
+    - 0.2
+    - 1.2
+  mode_spread_jitter: 0.3
+  speed_risk_exponent: 3.0
+  department_size: 6
+  cross_department_share: 0.1
+  dedication_levels:
+  - 0.5
+  - 0.75
+  - 1.0
+  dedication_weights:
+  - 0.2
+  - 0.3
+  - 0.5
+  safety_skill: true
+  constraints: true
+  reviewer: true
+  extra_workers: true
+  liaison: true
+  rewire: true
+  barred_share: 0.05
+  incompatible_pairs_per_worker: 0.1
+  review_task_share: 0.15
+  quality_share: 0.15
+  review_dedication:
+  - 0.25
+  - 0.5
+  extra_share: 0.3
+  extra_overhead: 0.1
+  extra_floor: 0.75
+  liaison_task_share: 0.1
+  liaison_dedication:
+  - 0.25
+  - 0.5
+  liaison_upper_spread: 2.0
+  rewire_share: 0.3
+  long_range_share: 0.3333333333333333
+  dedication_variants: 3
+  separate_quality_from: 12
+  attempts_per_mode: 30
+details:
+  modes: 164
+  tasks_at_cap: 0
+  relaxed_constraints: 6
+  rewired_edges: 9
+  departments: 1
+  quality:
+  - worker_2
+  safety_skill: 3
+  review_tasks: 4
+  liaison_tasks: 3
+  extra_tasks: 2
+  barred_pairs: 8
+  incompatible_pairs: 1
+  edges: 63
+n_workers: 7
+n_tasks: 32
+n_skills: 0
+seed: 0
+deadline_factor: 1.25
+reference_makespan: 588
+deadline_reference_dedication: full
+schema_version: 2
+n_dedication_levels: 4
+```
+
+# Data
+
+```yaml
+workers:
+- id: worker_1
+- id: worker_2
+- id: worker_3
+- id: worker_4
+- id: worker_5
+- id: worker_6
+- id: worker_7
+distributions:
+  adebb98633477e150d5b30bc4d40109880125255f02e19b56fb44339244b0fa5:
+    family: tabular
+    probabilities:
+      0: 1.0
+  cdb106cfdba533a500e4b3f689a7c62579867879ec959134c5a28c29e8e526d8:
+    family: pert
+    a: 39.25615655276254
+    b: 65.42692758793757
+    c: 156.8516779263247
+  15f6425bbb4d13b45bf5f6f9a6b339fbc23599b2c6a6584ba54f5119a5633e7c:
+    family: pert
+    a: 22.127073486273773
+    b: 36.87845581045629
+    c: 133.91894522761822
+  8a4c90c933204723543f5fb3fed3e6e88bac4493cf128fa1581ed60ba844dcf6:
+    family: pert
+    a: 31.724706973359776
+    b: 52.8745116222663
+    c: 142.40427922236188
+  dc53c6510f98ab55e2fdc7eb3ce280d8c9878deb0ed8cadbe806f75c2a178c54:
+    family: pert
+    a: 26.866765603569203
+    b: 44.77794267261534
+    c: 220.01355962857963
+  c930d5c839c664766bd1ae74a9b58cd0be1e8f47c755e806ce4678dd72c5a6c2:
+    family: pert
+    a: 25.371517650530894
+    b: 42.285862750884824
+    c: 173.9639962344774
+  dea9b06e1e52ec4be33ca591f47a4d09708d3d799b0009b4715929bcf043430a:
+    family: pert
+    a: 32.727023802546945
+    b: 54.54503967091158
+    c: 153.04417101538087
+  3f68d00e44af8d60040d3d2dd524bb21ab744898f5f6d06050e7377c428f8d90:
+    family: pert
+    a: 24.4449857287065
+    b: 40.7416428811775
+    c: 171.81908385805323
+  029b66266f2bda395bb9a15490e3742d79628a8ae1fb551f2c6646c000511bba:
+    family: pert
+    a: 30.365917056569103
+    b: 50.609861760948505
+    c: 132.64419764935627
+  316fb52379ff82fb2cac65b0fe0531f6cf527eaf6a0d05b87beb1446aa6c54fb:
+    family: pert
+    a: 24.947355598562563
+    b: 41.57892599760427
+    c: 168.1977655050801
+  8fb518b79a4ec73e715ee0b4a9814014bbf51bc9b0354f8b3b1e73426c2b2746:
+    family: pert
+    a: 29.224654382566218
+    b: 48.70775730427703
+    c: 105.21046683266599
+  d4175fa4bff44823067b3a8a007b79535bff2134db7574a29d131d062e4161ed:
+    family: pert
+    a: 34.47480255522055
+    b: 49.249717936029356
+    c: 97.99704238849432
+  375c98fea9df7cb3562e8e12ad9fd86807bc138dc3ecd6dd5ea2213c4656e812:
+    family: pert
+    a: 57.411622672859664
+    b: 82.01660381837095
+    c: 110.08925145922039
+  d0c922b050962314ebe23ae9b361688cac01f9057e74c9b7062e6c2239507096:
+    family: pert
+    a: 25.877559941884826
+    b: 36.967942774121184
+    c: 114.91083384082064
+  ffaacdb096355ec940259f53b61bf444e9930f2383fe434ef25a3911782a3f5c:
+    family: pert
+    a: 23.47554675593235
+    b: 29.344433444915435
+    c: 53.32083244158588
+  a2c8492169018a584136b2c38506f1ae42555bd5bbdb84bbe1cd25456c946dcd:
+    family: pert
+    a: 29.516088638350045
+    b: 36.895110797937555
+    c: 61.05330526123697
+  4c80678025f07e62af2239a9efcc505ed21ead29bc97aeaf608be601295d1b93:
+    family: pert
+    a: 22.691320088338298
+    b: 28.36415011042287
+    c: 45.92851980445142
+  5ba49a3946e366f7c88cedb41afdd9b3cc04862b119dee1d4ac9df69a93c3e59:
+    family: pert
+    a: 18.58001011852909
+    b: 23.22501264816136
+    c: 80.92606167614208
+  5b094560fbaba3e613aad3592f4339d7a17d0a749e40479657c8267534d0749c:
+    family: pert
+    a: 34.431082253082394
+    b: 43.03885281635299
+    c: 60.06791361314034
+  c197f3b4fa70a34d1fcbf273f2f5e655b15bf6946d5dc00b008567a87d8050c7:
+    family: pert
+    a: 28.658913066212115
+    b: 35.82364133276514
+    c: 63.68371048752298
+  e085c676bb38048df709e780fe0a9281d4037f7504ae2e189871fad848d41142:
+    family: pert
+    a: 29.907832023025538
+    b: 37.38479002878192
+    c: 76.00566728248674
+  d9b47e4dc5af9e393d3b4440611f67f047a4179854327d530a71f0579d999f45:
+    family: pert
+    a: 32.0334041387925
+    b: 40.04175517349062
+    c: 80.0390608912636
+  e314900ee712d4185c48c31fb06309fb0732d921547eb7e696c3276412384af7:
+    family: pert
+    a: 38.691069709102294
+    b: 48.36383713637786
+    c: 74.70634561462991
+  dc93dc01620e7da3daf6e0b327e14c3d57c82b59175d855a1d33e3cc0962c141:
+    family: pert
+    a: 33.81639534607402
+    b: 42.27049418259252
+    c: 60.47499835525915
+  8fe9d0d7fa309d112ee8888561f65b1421aa8b74889cc7f078845d3a3086b124:
+    family: pert
+    a: 27.3809461129627
+    b: 34.22618264120337
+    c: 47.60415077246762
+  6e77937aee7e3a263b37e860c11cd68337c04cdec5cb10228b94282823e9eab4:
+    family: pert
+    a: 32.92105095122894
+    b: 41.15131368903617
+    c: 50.47612898015631
+  59d2baba0c993349a7ac5be0564f09d2362c730d987db636764028f8348b6ef3:
+    family: pert
+    a: 21.343481967926206
+    b: 26.679352459907754
+    c: 52.70468770525398
+  7752838b2e4d5b28807463520559f7e9c9938715164cac0ca91cc821bd3ec0b7:
+    family: pert
+    a: 44.33378314078859
+    b: 55.41722892598573
+    c: 78.34514873002217
+  14a64a689e94d7b9bda413ab5b1ef14d18b1b55dce50293091e66403561455a8:
+    family: pert
+    a: 30.831233329485045
+    b: 38.5390416618563
+    c: 63.258763603311635
+  fb0a743b8f571c20aafaeedcc4e3f0e31392ac4355b7800fba27fbdf4021ff99:
+    family: pert
+    a: 26.840319347011743
+    b: 33.550399183764675
+    c: 55.96624437668267
+  0f93c66e48f84f3427d51f8baaf4957745f78a358c7b37c74a2e082197cfc19b:
+    family: pert
+    a: 28.140022754001077
+    b: 35.17502844250134
+    c: 58.60934775173462
+  651bad96b1dec06665d2a7375964c3c2bb38ff0f13668a55de80af1782469f62:
+    family: pert
+    a: 8.1342657925011
+    b: 11.620379703573
+    c: 28.65318980164555
+  49ed34db0a1bdff96b228b3e30157baab4afeeeba57e51a48c70cd197206605d:
+    family: pert
+    a: 7.992369939171425
+    b: 11.417671341673465
+    c: 27.394928062056067
+  0bb409bb7a33ae6760d539f22d315b4091b930813b62e0666be28b02b557a5cd:
+    family: pert
+    a: 38.08742325784035
+    b: 47.60927907230044
+    c: 74.16917135033292
+  dada5c5c191e7ba011bf9a6e52f944bce28216608e34a8ed73db404b3097712d:
+    family: pert
+    a: 38.69220479108813
+    b: 48.365255988860156
+    c: 69.95581010284322
+  59e11677b73d48fae87d42967ab40b688d500a67e6e18f26309cc60a95ef651e:
+    family: pert
+    a: 33.44217560112056
+    b: 41.8027195014007
+    c: 67.89822561667687
+  61264e052be0cae62625a973ddaa8b90e7a12c52f50917f58934e3d7ba41e172:
+    family: pert
+    a: 45.06417895434805
+    b: 56.330223692935064
+    c: 81.9736894854222
+  75df2dbabccc21b324d5d46cb8183ef97aab4200886ccc37f900f2fd597202c4:
+    family: pert
+    a: 72.54608639095298
+    b: 90.68260798869122
+    c: 169.9162589294329
+  fb80fdb89e01f092b421e7ba7b0769c48f7a782b90f75945bdd99722b2f4b8dc:
+    family: pert
+    a: 123.25314948498674
+    b: 176.07592783569535
+    c: 262.89493157573907
+  06da7d9560072d630602882ccf2a99593d7e252e05e2ea4a56550033d3b53361:
+    family: pert
+    a: 44.49893278035766
+    b: 63.569903971939524
+    c: 162.56855506822328
+  8274c0e411b6da6fa58c74ad69cc2d29a4185138bc898b1fca4bfd9908d2723f:
+    family: pert
+    a: 36.53630342478899
+    b: 52.194719178269985
+    c: 116.82778120207905
+  d54c9b13c2e625fac8ea1698a8227b7d20d5d0a2197b589507b8540a6079e969:
+    family: pert
+    a: 35.23398814432949
+    b: 50.33426877761355
+    c: 93.90075312203312
+  a0d6ec5f43088bc00a02e109a955c0b9ff548df35c3f32774675955764a84620:
+    family: pert
+    a: 35.23888561640742
+    b: 50.34126516629632
+    c: 114.17185614244877
+  57899fc671937354415361a8d6c1809dc73f1dc3f1c9b97b6f7c0d0083c5a129:
+    family: pert
+    a: 28.730826058971125
+    b: 41.04403722710161
+    c: 67.88822335655091
+  38de6de6f5290766d12f07e9e004cfa611931339bf79e099d46bc3964bd5cbb8:
+    family: pert
+    a: 23.268010635010473
+    b: 33.24001519287211
+    c: 92.4404705805543
+  927cd4773e2e4573617c361485bde7d489fb5d0907d9f5037282bc4ba50b5310:
+    family: pert
+    a: 25.084878169305263
+    b: 35.83554024186466
+    c: 82.67158998978614
+  6da2c24c2368c411bc8ba159f406a6f07f8bd17ff46cad21e20a03ba21ea0ff6:
+    family: pert
+    a: 32.940243127540064
+    b: 47.05749018220009
+    c: 111.79657692720826
+  83a4e0020bd316641e0b84a9bf627cae8fe62ff0494c7ae786f3cfed69e0f356:
+    family: pert
+    a: 31.890250658997314
+    b: 45.557500941424735
+    c: 74.02364745330826
+  ac289b097e35b570bf4b51cb530fec1b760b5cf9ca01aea95a97598b49bb8207:
+    family: pert
+    a: 28.521477560780113
+    b: 40.744967943971595
+    c: 87.77488977368833
+  f0c324098fd4d187fe1c5e23707ed26cb818ad889e5f35c3e1d9c51e11d62ac7:
+    family: pert
+    a: 22.28473297091794
+    b: 31.83533281559706
+    c: 93.68791334553984
+  ccdd887118b0225f72daa2f25cf2cf3cf5b3634ceaacf00fe5b4529dbac16353:
+    family: pert
+    a: 19.161325810147424
+    b: 27.373322585924893
+    c: 93.90708857003706
+  2fbd683a21f83730fc1a54ec3e9522a816927ec3ebd937ac5b0b242e6598febe:
+    family: pert
+    a: 28.62013850988979
+    b: 40.88591215698542
+    c: 92.15754216706804
+  a207adf0eef3d141e66c27cc0ae348fe45e9ec4f98413b530ba632a4b73b923a:
+    family: pert
+    a: 15.382682868183906
+    b: 21.975261240262725
+    c: 45.731011436521804
+  44627ff6421422caea0302aa0e045625d24ae83a1f0c52b1c4a622efe17a9ec3:
+    family: pert
+    a: 16.48566072060132
+    b: 23.550943886573315
+    c: 52.34973309522185
+  825e7026374814b7b6fd45ad0f66fbd8f1e27ada59939fe012a5872e3f9171fe:
+    family: pert
+    a: 33.73821197826413
+    b: 56.23035329710689
+    c: 249.39256218342194
+  18f0ca6bb41fa0eaaa99cd544f04d63c9c04b4d9de378fae0e2d284d6b2c3dfb:
+    family: pert
+    a: 79.0349548322611
+    b: 131.72492472043518
+    c: 318.62298759709233
+  95a494430bb84e39bccbd8905257dc772566c518b3e32a9b3b2bb594ad61b514:
+    family: pert
+    a: 23.17793095527924
+    b: 28.97241369409905
+    c: 45.98381316572288
+  1b340cc0891316ad28f9839ba3df5cb39e53181738948dbd994784b9e6a83bb2:
+    family: pert
+    a: 44.45049843508306
+    b: 55.56312304385383
+    c: 68.10230605441116
+  ff8a2882ae08f2f202552bbf7a0876648332708ce4240728bb502e759b9d5bee:
+    family: pert
+    a: 27.628126228833356
+    b: 34.535157786041694
+    c: 61.69959405111743
+  45c40c2cd333b3cf28a6ada38f59b35509c841fd7b25833b947f171a51299117:
+    family: pert
+    a: 29.75337741326019
+    b: 37.191721766575235
+    c: 58.707728262130345
+  7cf305339d92638bb3bc85067b15d8636fab6d7b70eab02fc80f5269dd4a45f8:
+    family: pert
+    a: 31.641136339176303
+    b: 39.55142042397038
+    c: 64.68512886135815
+  b576ad0423943b73fe736dc93b6b2d42016678dffa5b04746b4b05bdbf77f258:
+    family: pert
+    a: 22.98894822092403
+    b: 28.736185276155037
+    c: 40.98873843515042
+  1613bd57df555a5e7015530880e40f87af8460338765ae7669e4a9c0eac2c354:
+    family: pert
+    a: 22.16452527624267
+    b: 27.70565659530334
+    c: 57.81676199949316
+  dee9b8a78aca4f9ff1d8452641fedac3593ff9e3ad7efe2054ef37bc940d83ba:
+    family: pert
+    a: 22.7845467390872
+    b: 28.480683423859
+    c: 41.76185838163759
+  d377fc978b860a119e3c840d11fb23e812ddd96ec6ccbd522175c2c76900edec:
+    family: pert
+    a: 47.73420981005475
+    b: 59.66776226256844
+    c: 80.95643288934478
+  ac6ec90e1515ae970078e1329b4add43d65eb1fef9462c91f73bc8ae03518b7b:
+    family: pert
+    a: 24.014620340731202
+    b: 30.018275425914002
+    c: 52.08732634565029
+  467b7b5e346db81cf8b838f1dc8d22b0b0d64364330fce12fd36ea7c90e35e6f:
+    family: pert
+    a: 19.01983760732351
+    b: 23.774797009154387
+    c: 42.42686592863102
+  ffdc4a6b16a3375be7920f5d0721db72b620d8741de65aafe9d960740a50fec4:
+    family: pert
+    a: 26.310221068351552
+    b: 32.88777633543944
+    c: 57.70115978135628
+  d4ebb52998dd7fead69ac6e5a454ff6b5f184eac0ce4475d97190920a8069ef1:
+    family: pert
+    a: 24.111890201375616
+    b: 30.13986275171952
+    c: 47.359870631400376
+  7b90ebca7f968c4db2520749d54cef38127794f3c6262ecf8e92bd1d63cbae5e:
+    family: pert
+    a: 16.866952100818995
+    b: 21.083690126023743
+    c: 37.55510831126702
+  570c452af4ccdbd42588ec74e17df7b87fe6a2ad17e98861f357e0879504ec2d:
+    family: pert
+    a: 24.444343073366063
+    b: 30.555428841707577
+    c: 49.434897177955904
+  ae1b2b58d2eccc1a76e12fe92084d0ea08e4d4346d1d59c72a3d57d6f6672457:
+    family: pert
+    a: 28.066982839830764
+    b: 35.083728549788454
+    c: 47.58728076339064
+  c5d95bd56b96de5dade695fcc4abcb50f7e5e7b856a5f0a1e2c86c662776530f:
+    family: pert
+    a: 9.698640827013028
+    b: 16.16440137835505
+    c: 101.68491303495355
+  7856b033e087405802f73e69e25611c57cbb268e8691c546f94249ef8f7fd858:
+    family: pert
+    a: 6.859607401000264
+    b: 11.432679001667106
+    c: 75.56673254685641
+  ae469436b88a0f6563ee36a3d0257ede1dd20f737290adbb4c3b55feba852cb1:
+    family: pert
+    a: 6.817644023181851
+    b: 8.522055028977313
+    c: 11.957766834388872
+  d04b9cdac69fb4ccdb7060cf477596ab58636b20319828f2d1b80fec6a64a857:
+    family: pert
+    a: 7.448140904564589
+    b: 9.310176130705736
+    c: 15.310084001722307
+  a830db50378a9f96b2ccce9715a6837b941818f8e7960ced7df5a791bf280de8:
+    family: pert
+    a: 7.587008161639182
+    b: 9.483760202048977
+    c: 12.427336142986373
+  d0c1596398916170ee3a63ffb8430e7fd2b03d014c98ce0d01447a117ad6d792:
+    family: pert
+    a: 5.222633571747128
+    b: 6.52829196468391
+    c: 12.428629120087672
+  1627d79522a9e5ffc96d396d616648b3e332e5d5586749155831ba167a6f7b6b:
+    family: pert
+    a: 8.12690110603625
+    b: 10.158626382545313
+    c: 19.73066549652001
+  ada3e4e56ae2090377db8391ed9aa954e7614d50caae0b5c09f607dfdbbbc75a:
+    family: pert
+    a: 8.065084867315134
+    b: 10.081356084143916
+    c: 19.2378750395839
+  ced9142606053f7d8d49c38981f20341b8bd32f642b6659d02235e98430230a4:
+    family: pert
+    a: 8.609215881791247
+    b: 10.761519852239058
+    c: 20.999911532477768
+  f449f5eb5229f2279d62db156c94be72c99759df4901abec3d7076c1f726758a:
+    family: pert
+    a: 6.507805653514303
+    b: 8.13475706689288
+    c: 16.969340485993268
+  596bc43db49e846df957570b1d7e5767c63cec27184bab96b5dee5149f83fc65:
+    family: pert
+    a: 9.713365922196978
+    b: 12.141707402746222
+    c: 15.493341364924254
+  6838410b6e17d87b495a5e0586274549052a713400f77df82f55496d981e4f85:
+    family: pert
+    a: 10.595578097520878
+    b: 13.244472621901098
+    c: 21.04900998206839
+  5be1c5094439c0f268822097de16a18d99dedfcd835df3d2b748d1fafd43af37:
+    family: pert
+    a: 9.99015720150129
+    b: 12.487696501876613
+    c: 15.041044898654336
+  2746b36e6c392a6bd848f03cd7312a9fbb2f985b4863cbbf6f458a8cfe845a32:
+    family: pert
+    a: 8.47467164093363
+    b: 10.593339551167038
+    c: 18.921190184834227
+  08ac3ec2f1c52fbeedaf6b6e0af344480bf324d8206ff65f04a0c2fa37120b30:
+    family: pert
+    a: 5.602929382049753
+    b: 7.003661727562191
+    c: 11.983384967251073
+  1a13ec8a557b71344751c031dfec5483553298a5b1ace2f712dcbc56230e0ee8:
+    family: pert
+    a: 11.07392399319868
+    b: 13.842404991498348
+    c: 20.10053736559294
+  49bfbb4ab551930f595e797294a4eb83db60d99ed0ed4b9b6a108b7a18a90167:
+    family: pert
+    a: 8.899316591623554
+    b: 11.124145739529443
+    c: 14.475808231988735
+  229badf338d2fa26fe3903c8e7aefee06e7b7275d3d2d672a928ca41f46bd1bc:
+    family: pert
+    a: 76.45031889577167
+    b: 127.41719815961946
+    c: 517.6620939325725
+  7093f72b8be56a5a58e2ab218b97182d67ea38169e1eb28d2d246ad38eb03723:
+    family: pert
+    a: 46.05482868585185
+    b: 76.7580478097531
+    c: 202.04452933244457
+  591043041196e1c8e8d6c39a3376b000e136031b3ad292aeb10432768c73c74c:
+    family: pert
+    a: 9.842825369564036
+    b: 12.303531711955044
+    c: 22.79701803174057
+  d777f6a1c5c4d84af2b739cb611189165ef51a5d0e791404bb41330e86db8412:
+    family: pert
+    a: 12.294944784087038
+    b: 15.368680980108797
+    c: 19.879602795219558
+  c85d16977f52405fe6dde0dd4da7ffc64f882d268d1fdda5807da8babb29504c:
+    family: pert
+    a: 11.859742075296372
+    b: 14.824677594120464
+    c: 28.598491633039224
+  bc3e760ee41257ff62729275c0a3799e532948fc98ba2aea29ccf7ac0adcc854:
+    family: pert
+    a: 25.36711939538128
+    b: 31.7088992442266
+    c: 158.544496221133
+  1ba307146f35e864220af462b38f9c7f5b092ae4c1ef26ba78b131c97e65a093:
+    family: pert
+    a: 34.93750254869465
+    b: 43.671878185868316
+    c: 218.35939092934157
+  f6f4b3edd04c398a905d0cd9811c2893e9e33ad7d9516c0e58d772564095004e:
+    family: pert
+    a: 30.027774817002268
+    b: 37.534718521252834
+    c: 187.67359260626418
+  64d6488dac2f7bc63b4b0e02f58f6ebd9f611df520bf5a33d3dd3fe0b5c3696d:
+    family: pert
+    a: 2.857648374902607
+    b: 4.762747291504345
+    c: 20.736706511694468
+  0a39c96f95722e4f801f9796f9987a520717151c2c6d0b8b1c2cbcc6f4b75bb7:
+    family: pert
+    a: 3.70045607076242
+    b: 6.167426784604033
+    c: 25.948993627530943
+  890ea46933b4915e40ec3ecadef7b6782808eca935a9dae431ee3b4f168ccd8a:
+    family: pert
+    a: 3.721134497819773
+    b: 6.2018908296996225
+    c: 13.669697962441436
+  4f1c71b18a0e9b18d854b134e55fbf794c28d6fa3ae52ee436d6a9eaac1e5c25:
+    family: pert
+    a: 6.698878926715653
+    b: 11.164798211192755
+    c: 22.064169580028842
+  4227c165f0d76083fa3234ec30db32739f3d217e3aecde5fd63641bea2f13dbf:
+    family: pert
+    a: 3.718598320682432
+    b: 6.197663867804053
+    c: 30.816079590107456
+  86b1653befac5aecc258e6534716c95917793815e05c16887cf58783c0d8dc34:
+    family: pert
+    a: 2.683089823867666
+    b: 4.471816373112777
+    c: 19.109308174124553
+  f8d8be72c05448378ca213a331202475ba7bb9f1fbc5b7b56aded9536dcec1a1:
+    family: pert
+    a: 2.1879190662353447
+    b: 3.6465317770589083
+    c: 14.64222270851664
+  36221525cae6d432a93e06911cd0345726a1494f96947723c7748b5f32e634fa:
+    family: pert
+    a: 5.087763923432413
+    b: 8.479606539054021
+    c: 46.55086766114743
+  c547cfdc6811ad970f35d5eb49b7d7438081ce9ecdd8ecd86ff8ce8c5ce007e1:
+    family: pert
+    a: 4.6455871066748085
+    b: 7.742645177791348
+    c: 33.351405141705875
+  af473406bffa83cd7e44564adc90e77eaef8288b95a1e0f719c54b23bccb8a72:
+    family: pert
+    a: 7.320217538174472
+    b: 12.20036256362412
+    c: 34.90912034785444
+  7a7e35bebfdc24de4359cb111084873d4cbaaaec5aacd457023381ca498b46ab:
+    family: pert
+    a: 4.812151034271297
+    b: 8.020251723785496
+    c: 23.676368226472654
+  ad3c1f4f9823075e745070a23176bbfd7c808c2ea6e6b20775258985b40837cd:
+    family: pert
+    a: 6.887075126899913
+    b: 11.478458544833188
+    c: 40.46208946551826
+  d82c3000a2d7c67e5bed53c699f42dc55dec838ff9c538fa90adb8806d060b66:
+    family: pert
+    a: 4.933786386013131
+    b: 8.222977310021886
+    c: 27.246831301510078
+  69eb53786fc28543a7092b7415dd102de7457537793a00515de8c18cf785b163:
+    family: pert
+    a: 7.069745717599916
+    b: 10.099636739428451
+    c: 18.706506498351875
+  1658e2f474ce58ded6f1ea0eb869c9f00e2e9afe322b8af83fdb26681efe5358:
+    family: pert
+    a: 4.934701405434604
+    b: 7.049573436335148
+    c: 20.09239398490088
+  ed16298914f89d97ca8b4d8e7fead2ace5abfb328d874174291a94c516e0d63f:
+    family: pert
+    a: 5.7300083886364
+    b: 8.185726269480572
+    c: 22.11067167250349
+  0f6989c425f964359658ae6eb57b9771d21e30e16ea8d0f03aea0cb9d4d9551d:
+    family: pert
+    a: 6.469450807036044
+    b: 10.78241801172674
+    c: 49.41457568138403
+  96348a05c6188a294113e4ddca96423c0bbe3ecc62b05eab2584b27a44d2415a:
+    family: pert
+    a: 7.373245841180999
+    b: 12.288743068635
+    c: 42.945354592076676
+  ed9f78f508d213d34147be5ffa3d87cf4263f50f23375c2e34d1b8dc58df5918:
+    family: pert
+    a: 27.94712180220608
+    b: 34.9339022527576
+    c: 65.63932657105786
+  79ae8f1a03603b2053ada9309b61bf1f68f65dae34723fc2ac7b8c8cdae34fad:
+    family: pert
+    a: 33.471476201038854
+    b: 41.83934525129857
+    c: 62.44562271466024
+  500fc1aa3544583c4ad9cc3538acfad8fb16e0e9d18880589df99752bd49e4ed:
+    family: pert
+    a: 25.74388872347177
+    b: 32.17986090433971
+    c: 60.051048402922
+  d296b474851d9456f92732918df610ba8af2ac05110a351c9573008f6af57b6d:
+    family: pert
+    a: 21.506563239801537
+    b: 26.88320404975192
+    c: 53.676900830274185
+  de57d8e8b3c348f72f32dfcf1584ea94dda3e2ac825e63162358b13003e67770:
+    family: pert
+    a: 32.3465408104323
+    b: 40.433176013040374
+    c: 59.052007615177345
+  bcf927a7d67b617188a0e1dc00a814a1a4623a88a767ee5cdcb628cc445fb07e:
+    family: pert
+    a: 25.262670385258566
+    b: 31.578337981573206
+    c: 79.14828328552798
+  ef8171f3b95398206a4379fd27ab96e11179ebf66f12bbc5978599436f431a02:
+    family: pert
+    a: 30.0225436296317
+    b: 37.52817953703962
+    c: 187.6408976851981
+  f3cc7003da5924672d2f8edb5e35ddfe26ede66b89245d609e1accacb8cb94cd:
+    family: pert
+    a: 30.874756883801446
+    b: 38.593446104751806
+    c: 192.96723052375904
+  55fb268bf7963830ce894ddd3582921784e68b3fed764341438a58bba6a2eab7:
+    family: pert
+    a: 51.87054555939526
+    b: 64.83818194924407
+    c: 324.19090974622037
+  396ab54a67f34c1a1cc3c62ca907faf631e6bb0d9feeed1a50fc52447c9094fb:
+    family: pert
+    a: 32.89893355135602
+    b: 41.123666939195026
+    c: 205.61833469597514
+  175ab947a3ec853916e8be56158c0cae0d39c2a66f824737b168ae2d6cb58dbc:
+    family: pert
+    a: 38.26808036727279
+    b: 47.83510045909098
+    c: 239.17550229545492
+  b6ffc277b6a5832afe047cc857a63aa7ce16d35fae8f40a9f9cc2d247d1432e7:
+    family: pert
+    a: 31.41339367169769
+    b: 39.26674208962211
+    c: 196.33371044811057
+  628386a95d052baac1f2c898354b09d79d24602f1a7f55a8fcf90d0b44edf4d7:
+    family: pert
+    a: 31.11654591963659
+    b: 38.895682399545734
+    c: 194.47841199772867
+  17adc18347b84c9b12704ba5da5db604d142431173d6bd1dc4caefd8709e4124:
+    family: pert
+    a: 32.81803649703234
+    b: 41.02254562129042
+    c: 205.1127281064521
+  0bc1aa355bb1fe1a827b98ab87c0f48735a69a0a2a73472b71b9299c23fd6f33:
+    family: pert
+    a: 19.87673039436328
+    b: 24.845912992954094
+    c: 124.22956496477047
+  c704b955e5c7280e74c461b5d4906321588621e9fb7f4ab9d13eaf929ab393a4:
+    family: pert
+    a: 30.712847258981412
+    b: 38.391059073726765
+    c: 191.9552953686338
+  38b82b6168b4db8f2e3fb784b90fb334a1c708dd729c0d06e26859cd70c710a7:
+    family: pert
+    a: 20.72401308458025
+    b: 25.905016355725312
+    c: 129.52508177862657
+  e85888dbe5dea473861a90c4c88384e43488aeb5d2535e69fcd1bbeb8586e775:
+    family: pert
+    a: 27.416297916615505
+    b: 34.27037239576938
+    c: 171.3518619788469
+  49bcdb48ee471b5269656b2f98350c18f2894ab3e32441fef20657173b0e9719:
+    family: pert
+    a: 24.985239307750216
+    b: 41.64206551291703
+    c: 208.21032756458516
+  43fca97f94d8726911f3079c06c518fecca9e5185fa9e542595e73ae0388d2a2:
+    family: pert
+    a: 22.318341854305185
+    b: 37.19723642384198
+    c: 185.9861821192099
+  650071f04e31726ef534a52c4c08243c44a3907cf457487d9f5d22c1e0a70e1e:
+    family: pert
+    a: 14.998059757508276
+    b: 24.996766262513795
+    c: 188.48369162082054
+  4be8d866b0bb7767e037d31c02472d0a20657657e2619880d53e894daed5d6d9:
+    family: pert
+    a: 33.34367064159318
+    b: 55.572784402655294
+    c: 279.5127619132165
+  b04fd89e40b5387ba2c5847ded288071ef8f7d55d5283fad8ed3aa11ddd5d0c4:
+    family: pert
+    a: 14.880809510673544
+    b: 24.80134918445591
+    c: 134.8082847270458
+  16b0be6e5acbaeceab55db970a8eb61c541ee4e350fd9a7ec0d8648667a52424:
+    family: pert
+    a: 24.633591937983116
+    b: 41.0559865633052
+    c: 205.27993281652599
+  8c1421f6275d5d3bcc89e54bfb1e3fe8212641ef22775e65091526d0c5f4c9dd:
+    family: pert
+    a: 19.32436938239966
+    b: 32.207282303999435
+    c: 184.71698379671022
+  e3543f45b199d9933131bbe8a70815b3820203e52310e1568e7ace0fcd95bc79:
+    family: pert
+    a: 7.982795761695043
+    b: 9.978494702118804
+    c: 23.101944240250702
+  31b687f72632cf64fdcc9c01957f5780635e917a80be61e132e8fd8002261e3e:
+    family: pert
+    a: 8.618333059964968
+    b: 10.77291632495621
+    c: 20.42421271052939
+  740d7a18fdc38c30c34a636d8496dcb10c156792ec464f968242504767696953:
+    family: pert
+    a: 10.175929731712756
+    b: 12.719912164640945
+    c: 21.834377724693912
+  12e1e5c79a535d4b5ccf1da61ced1899b9af461ee6977192939b2079555ecda9:
+    family: pert
+    a: 34.95345148266465
+    b: 49.933502118092356
+    c: 110.28158203634949
+  ef7057550fd5159dcbe981f6db05681cc3ee361aa17eaef755678287f758998b:
+    family: pert
+    a: 21.5539729220645
+    b: 30.791389888663574
+    c: 87.51488091372212
+  33aa55630fb89ae4bc57d12caa28540990561f42558970cae252b2794d950190:
+    family: pert
+    a: 24.438794251786714
+    b: 34.912563216838166
+    c: 95.23475429535375
+  45a2d5b37c1efc7b17c0305a9577312630fc50331efe6813122c10967d5921e8:
+    family: pert
+    a: 22.38282390507542
+    b: 27.978529881344272
+    c: 52.10734823080022
+  83fffefb92f6710951f27bf413de7f32e04868b62291770c74a2f0f1add6f17f:
+    family: pert
+    a: 25.165327997950897
+    b: 31.456659997438617
+    c: 53.26701813113364
+  3c0cc5a8d162c456363f419605b1eb52c734b3b98cf434f87e613ad6a9766446:
+    family: pert
+    a: 26.15813034347396
+    b: 32.69766292934245
+    c: 48.325593903171786
+  8c70d0951318619ef5b7a5c452972a5bb371e962b04637c44522394481a84d51:
+    family: pert
+    a: 12.205073639865933
+    b: 20.341789399776555
+    c: 170.62612727537632
+  67f44940e56112d04a4e0e67d81a07b683e4d74324c85d704000f97da3735fe9:
+    family: pert
+    a: 52.34712142295455
+    b: 65.43390177869318
+    c: 82.68862276267319
+  8915807da2c15c409ed64d298221e741fe33f2021c1852f0b4de2e2f8a864fe8:
+    family: pert
+    a: 42.1117257111851
+    b: 52.63965713898137
+    c: 78.6369054155091
+  82da16fbc09d7523aa7d6e4bf38afc8dbca53e1922cf1731e64c0afeed58c3ca:
+    family: pert
+    a: 34.38791504112383
+    b: 42.98489380140479
+    c: 59.628615327582196
+  a39c6c40dffb431b16df5521de7feb9bd2e1440aee3039b162692834c9be209c:
+    family: pert
+    a: 22.567230516577514
+    b: 28.20903814572189
+    c: 52.83184146449648
+  6e73750bf2114452a4b545a64eb0f0b0df3c42e315b5bc37cf18a87dbc15d4cb:
+    family: pert
+    a: 37.57719692013849
+    b: 46.97149615017311
+    c: 69.29891345961543
+  49ca3287c43ebf57202886e51cf761e11f4263772b30d825b9a0b631ce996ff7:
+    family: pert
+    a: 28.409266652912198
+    b: 35.511583316140246
+    c: 64.30019750576727
+  8a428336f4788fd176824a0abc1b035099a13456bbb19fc2273467e0e7e55022:
+    family: pert
+    a: 30.31356008980368
+    b: 37.8919501122546
+    c: 62.43573200911904
+  d2ae538d9bde899906794d9ccfc264fe0bd99da94657d22b7aa50b98e61846a3:
+    family: pert
+    a: 25.91620002436469
+    b: 32.39525003045586
+    c: 53.2236560105314
+  82f1df182a43ae9eb05cb8083a385f44c231dad481aaadcc6de04ad3f622c49b:
+    family: pert
+    a: 26.900730599173034
+    b: 33.62591324896629
+    c: 50.965619491600876
+  35a4d38bc9f77420f0fd7ff5bf3cc46cc8c116c50ed8465f988b06acf13df030:
+    family: pert
+    a: 28.18981443934575
+    b: 35.237268049182184
+    c: 50.61627318800174
+  6b63efcfa578c4753b46892db80b5264c9037ff2c34268d08867c999b3948727:
+    family: pert
+    a: 47.246560570809464
+    b: 59.05820071351182
+    c: 83.66555848716038
+  8c8f78ad9e950e43c4ecb86ecf49ebc97c5d66cc56e12a73485f130085f4e2d1:
+    family: pert
+    a: 36.69020555073944
+    b: 45.8627569384243
+    c: 59.530627667216955
+  972a3f27c63677a6e339e834656165f15acdaed7624decaf9a7db9a994c3bc70:
+    family: pert
+    a: 31.22304813897916
+    b: 39.02881017372395
+    c: 64.04441860900367
+  f49f4366be382b75edcbc3a6c7cf7f1b81cc80ce9af97ed25250b91e56dce210:
+    family: pert
+    a: 38.73448850624956
+    b: 48.41811063281195
+    c: 82.22049223824598
+  52bad167176ac594b170ed2e34c4cdaf96d56705f2c6c6f510be73b70e1d19a3:
+    family: pert
+    a: 36.63935777997974
+    b: 45.79919722497467
+    c: 67.27026840792952
+tasks:
+- id: task_1
+  milestone: true
+  modes:
+  - id: 1
+    dedication: {}
+    distribution_hash: adebb98633477e150d5b30bc4d40109880125255f02e19b56fb44339244b0fa5
+- id: task_2
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_5: 0.75
+      worker_6: 0.5
+      worker_1: 1.0
+    distribution_hash: cdb106cfdba533a500e4b3f689a7c62579867879ec959134c5a28c29e8e526d8
+  - id: 2
+    dedication:
+      worker_5: 1.0
+      worker_6: 1.0
+      worker_1: 1.0
+    distribution_hash: 15f6425bbb4d13b45bf5f6f9a6b339fbc23599b2c6a6584ba54f5119a5633e7c
+  - id: 3
+    dedication:
+      worker_5: 1.0
+      worker_6: 1.0
+      worker_1: 0.75
+    distribution_hash: 8a4c90c933204723543f5fb3fed3e6e88bac4493cf128fa1581ed60ba844dcf6
+  - id: 4
+    dedication:
+      worker_2: 1.0
+      worker_6: 0.75
+      worker_1: 0.5
+    distribution_hash: dc53c6510f98ab55e2fdc7eb3ce280d8c9878deb0ed8cadbe806f75c2a178c54
+  - id: 5
+    dedication:
+      worker_2: 1.0
+      worker_6: 0.75
+      worker_1: 1.0
+    distribution_hash: c930d5c839c664766bd1ae74a9b58cd0be1e8f47c755e806ce4678dd72c5a6c2
+  - id: 6
+    dedication:
+      worker_1: 0.75
+      worker_2: 1.0
+      worker_5: 1.0
+    distribution_hash: dea9b06e1e52ec4be33ca591f47a4d09708d3d799b0009b4715929bcf043430a
+  - id: 7
+    dedication:
+      worker_1: 1.0
+      worker_2: 1.0
+      worker_5: 1.0
+    distribution_hash: 3f68d00e44af8d60040d3d2dd524bb21ab744898f5f6d06050e7377c428f8d90
+  - id: 8
+    dedication:
+      worker_6: 0.75
+      worker_5: 0.75
+      worker_2: 1.0
+    distribution_hash: 029b66266f2bda395bb9a15490e3742d79628a8ae1fb551f2c6646c000511bba
+  - id: 9
+    dedication:
+      worker_6: 1.0
+      worker_5: 1.0
+      worker_2: 0.5
+    distribution_hash: 316fb52379ff82fb2cac65b0fe0531f6cf527eaf6a0d05b87beb1446aa6c54fb
+  - id: 10
+    dedication:
+      worker_6: 1.0
+      worker_5: 0.75
+      worker_2: 1.0
+    distribution_hash: 8fb518b79a4ec73e715ee0b4a9814014bbf51bc9b0354f8b3b1e73426c2b2746
+- id: task_3
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_3: 1.0
+      worker_2: 0.5
+      worker_5: 0.75
+      worker_4: 1.0
+    distribution_hash: d4175fa4bff44823067b3a8a007b79535bff2134db7574a29d131d062e4161ed
+  - id: 2
+    dedication:
+      worker_3: 0.75
+      worker_2: 0.5
+      worker_5: 0.5
+      worker_4: 1.0
+    distribution_hash: 375c98fea9df7cb3562e8e12ad9fd86807bc138dc3ecd6dd5ea2213c4656e812
+  - id: 3
+    dedication:
+      worker_3: 1.0
+      worker_2: 1.0
+      worker_5: 1.0
+      worker_4: 0.5
+    distribution_hash: d0c922b050962314ebe23ae9b361688cac01f9057e74c9b7062e6c2239507096
+- id: task_4
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 1.0
+      worker_2: 1.0
+    distribution_hash: ffaacdb096355ec940259f53b61bf444e9930f2383fe434ef25a3911782a3f5c
+  - id: 2
+    dedication:
+      worker_4: 0.75
+      worker_2: 1.0
+    distribution_hash: a2c8492169018a584136b2c38506f1ae42555bd5bbdb84bbe1cd25456c946dcd
+  - id: 3
+    dedication:
+      worker_5: 1.0
+      worker_3: 1.0
+    distribution_hash: 4c80678025f07e62af2239a9efcc505ed21ead29bc97aeaf608be601295d1b93
+  - id: 4
+    dedication:
+      worker_5: 0.75
+      worker_3: 1.0
+    distribution_hash: 5ba49a3946e366f7c88cedb41afdd9b3cc04862b119dee1d4ac9df69a93c3e59
+  - id: 5
+    dedication:
+      worker_4: 1.0
+      worker_3: 0.75
+    distribution_hash: 5b094560fbaba3e613aad3592f4339d7a17d0a749e40479657c8267534d0749c
+  - id: 6
+    dedication:
+      worker_4: 0.75
+      worker_3: 1.0
+    distribution_hash: c197f3b4fa70a34d1fcbf273f2f5e655b15bf6946d5dc00b008567a87d8050c7
+  - id: 7
+    dedication:
+      worker_4: 1.0
+      worker_3: 0.5
+    distribution_hash: e085c676bb38048df709e780fe0a9281d4037f7504ae2e189871fad848d41142
+  - id: 8
+    dedication:
+      worker_2: 0.5
+      worker_3: 1.0
+    distribution_hash: d9b47e4dc5af9e393d3b4440611f67f047a4179854327d530a71f0579d999f45
+  - id: 9
+    dedication:
+      worker_2: 0.75
+      worker_3: 0.75
+    distribution_hash: e314900ee712d4185c48c31fb06309fb0732d921547eb7e696c3276412384af7
+  - id: 10
+    dedication:
+      worker_2: 0.5
+      worker_5: 1.0
+    distribution_hash: dc93dc01620e7da3daf6e0b327e14c3d57c82b59175d855a1d33e3cc0962c141
+  - id: 11
+    dedication:
+      worker_2: 0.75
+      worker_5: 1.0
+    distribution_hash: 8fe9d0d7fa309d112ee8888561f65b1421aa8b74889cc7f078845d3a3086b124
+  - id: 12
+    dedication:
+      worker_4: 0.75
+      worker_5: 1.0
+    distribution_hash: 6e77937aee7e3a263b37e860c11cd68337c04cdec5cb10228b94282823e9eab4
+  - id: 13
+    dedication:
+      worker_4: 1.0
+      worker_5: 1.0
+    distribution_hash: 59d2baba0c993349a7ac5be0564f09d2362c730d987db636764028f8348b6ef3
+  - id: 14
+    dedication:
+      worker_4: 0.5
+      worker_5: 0.75
+    distribution_hash: 7752838b2e4d5b28807463520559f7e9c9938715164cac0ca91cc821bd3ec0b7
+- id: task_5
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_3: 1.0
+      worker_4: 0.75
+      worker_5: 0.75
+      worker_2: 0.5
+    distribution_hash: 14a64a689e94d7b9bda413ab5b1ef14d18b1b55dce50293091e66403561455a8
+  - id: 2
+    dedication:
+      worker_3: 1.0
+      worker_4: 1.0
+      worker_5: 1.0
+      worker_2: 0.75
+    distribution_hash: fb0a743b8f571c20aafaeedcc4e3f0e31392ac4355b7800fba27fbdf4021ff99
+  - id: 3
+    dedication:
+      worker_3: 0.5
+      worker_4: 1.0
+      worker_5: 0.75
+      worker_2: 1.0
+    distribution_hash: 0f93c66e48f84f3427d51f8baaf4957745f78a358c7b37c74a2e082197cfc19b
+- id: task_6
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 1.0
+      worker_3: 1.0
+    distribution_hash: 651bad96b1dec06665d2a7375964c3c2bb38ff0f13668a55de80af1782469f62
+  - id: 2
+    dedication:
+      worker_1: 1.0
+      worker_4: 1.0
+    distribution_hash: 49ed34db0a1bdff96b228b3e30157baab4afeeeba57e51a48c70cd197206605d
+- id: task_7
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 0.5
+      worker_3: 1.0
+      worker_1: 1.0
+      worker_6: 0.75
+    distribution_hash: 0bb409bb7a33ae6760d539f22d315b4091b930813b62e0666be28b02b557a5cd
+  - id: 2
+    dedication:
+      worker_2: 0.75
+      worker_3: 0.5
+      worker_1: 1.0
+      worker_6: 1.0
+    distribution_hash: dada5c5c191e7ba011bf9a6e52f944bce28216608e34a8ed73db404b3097712d
+  - id: 3
+    dedication:
+      worker_2: 0.75
+      worker_3: 1.0
+      worker_1: 0.5
+      worker_6: 0.75
+    distribution_hash: 59e11677b73d48fae87d42967ab40b688d500a67e6e18f26309cc60a95ef651e
+- id: task_8
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 0.5
+    distribution_hash: 61264e052be0cae62625a973ddaa8b90e7a12c52f50917f58934e3d7ba41e172
+  - id: 2
+    dedication:
+      worker_2: 0.25
+    distribution_hash: 75df2dbabccc21b324d5d46cb8183ef97aab4200886ccc37f900f2fd597202c4
+- id: task_9
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 0.25
+    distribution_hash: fb80fdb89e01f092b421e7ba7b0769c48f7a782b90f75945bdd99722b2f4b8dc
+  - id: 2
+    dedication:
+      worker_2: 0.5
+    distribution_hash: 06da7d9560072d630602882ccf2a99593d7e252e05e2ea4a56550033d3b53361
+- id: task_10
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 0.75
+      worker_1: 0.5
+      worker_5: 0.75
+    distribution_hash: 8274c0e411b6da6fa58c74ad69cc2d29a4185138bc898b1fca4bfd9908d2723f
+  - id: 2
+    dedication:
+      worker_6: 0.5
+      worker_1: 1.0
+      worker_5: 1.0
+    distribution_hash: d54c9b13c2e625fac8ea1698a8227b7d20d5d0a2197b589507b8540a6079e969
+  - id: 3
+    dedication:
+      worker_6: 0.5
+      worker_1: 0.5
+      worker_5: 1.0
+    distribution_hash: a0d6ec5f43088bc00a02e109a955c0b9ff548df35c3f32774675955764a84620
+  - id: 4
+    dedication:
+      worker_6: 1.0
+      worker_5: 1.0
+      worker_2: 0.5
+    distribution_hash: 57899fc671937354415361a8d6c1809dc73f1dc3f1c9b97b6f7c0d0083c5a129
+  - id: 5
+    dedication:
+      worker_6: 1.0
+      worker_5: 0.75
+      worker_2: 0.75
+    distribution_hash: 38de6de6f5290766d12f07e9e004cfa611931339bf79e099d46bc3964bd5cbb8
+  - id: 6
+    dedication:
+      worker_6: 0.5
+      worker_5: 1.0
+      worker_2: 1.0
+    distribution_hash: 927cd4773e2e4573617c361485bde7d489fb5d0907d9f5037282bc4ba50b5310
+  - id: 7
+    dedication:
+      worker_1: 0.75
+      worker_5: 0.5
+      worker_2: 0.75
+    distribution_hash: 6da2c24c2368c411bc8ba159f406a6f07f8bd17ff46cad21e20a03ba21ea0ff6
+  - id: 8
+    dedication:
+      worker_1: 1.0
+      worker_5: 1.0
+      worker_2: 1.0
+    distribution_hash: 83a4e0020bd316641e0b84a9bf627cae8fe62ff0494c7ae786f3cfed69e0f356
+  - id: 9
+    dedication:
+      worker_1: 1.0
+      worker_5: 1.0
+      worker_2: 0.75
+    distribution_hash: ac289b097e35b570bf4b51cb530fec1b760b5cf9ca01aea95a97598b49bb8207
+  - id: 10
+    dedication:
+      worker_6: 1.0
+      worker_1: 0.75
+      worker_2: 1.0
+    distribution_hash: f0c324098fd4d187fe1c5e23707ed26cb818ad889e5f35c3e1d9c51e11d62ac7
+  - id: 11
+    dedication:
+      worker_6: 1.0
+      worker_1: 1.0
+      worker_2: 1.0
+    distribution_hash: ccdd887118b0225f72daa2f25cf2cf3cf5b3634ceaacf00fe5b4529dbac16353
+  - id: 12
+    dedication:
+      worker_6: 0.75
+      worker_1: 0.75
+      worker_2: 1.0
+    distribution_hash: 2fbd683a21f83730fc1a54ec3e9522a816927ec3ebd937ac5b0b242e6598febe
+- id: task_11
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 1.0
+      worker_3: 1.0
+      worker_5: 1.0
+      worker_2: 0.75
+    distribution_hash: a207adf0eef3d141e66c27cc0ae348fe45e9ec4f98413b530ba632a4b73b923a
+  - id: 2
+    dedication:
+      worker_4: 0.75
+      worker_3: 0.5
+      worker_5: 1.0
+      worker_2: 1.0
+    distribution_hash: 44627ff6421422caea0302aa0e045625d24ae83a1f0c52b1c4a622efe17a9ec3
+- id: task_12
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 0.5
+    distribution_hash: 825e7026374814b7b6fd45ad0f66fbd8f1e27ada59939fe012a5872e3f9171fe
+  - id: 2
+    dedication:
+      worker_2: 0.25
+    distribution_hash: 18f0ca6bb41fa0eaaa99cd544f04d63c9c04b4d9de378fae0e2d284d6b2c3dfb
+- id: task_13
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 1.0
+      worker_2: 0.75
+    distribution_hash: 95a494430bb84e39bccbd8905257dc772566c518b3e32a9b3b2bb594ad61b514
+  - id: 2
+    dedication:
+      worker_4: 0.5
+      worker_2: 0.75
+    distribution_hash: 1b340cc0891316ad28f9839ba3df5cb39e53181738948dbd994784b9e6a83bb2
+  - id: 3
+    dedication:
+      worker_4: 0.75
+      worker_2: 0.75
+    distribution_hash: ff8a2882ae08f2f202552bbf7a0876648332708ce4240728bb502e759b9d5bee
+  - id: 4
+    dedication:
+      worker_3: 0.5
+      worker_2: 1.0
+    distribution_hash: 45c40c2cd333b3cf28a6ada38f59b35509c841fd7b25833b947f171a51299117
+  - id: 5
+    dedication:
+      worker_3: 0.75
+      worker_2: 0.75
+    distribution_hash: 7cf305339d92638bb3bc85067b15d8636fab6d7b70eab02fc80f5269dd4a45f8
+  - id: 6
+    dedication:
+      worker_3: 1.0
+      worker_2: 1.0
+    distribution_hash: b576ad0423943b73fe736dc93b6b2d42016678dffa5b04746b4b05bdbf77f258
+  - id: 7
+    dedication:
+      worker_4: 1.0
+      worker_3: 0.75
+    distribution_hash: 1613bd57df555a5e7015530880e40f87af8460338765ae7669e4a9c0eac2c354
+  - id: 8
+    dedication:
+      worker_4: 1.0
+      worker_3: 1.0
+    distribution_hash: dee9b8a78aca4f9ff1d8452641fedac3593ff9e3ad7efe2054ef37bc940d83ba
+  - id: 9
+    dedication:
+      worker_5: 0.5
+      worker_2: 0.5
+    distribution_hash: d377fc978b860a119e3c840d11fb23e812ddd96ec6ccbd522175c2c76900edec
+  - id: 10
+    dedication:
+      worker_5: 0.5
+      worker_2: 1.0
+    distribution_hash: ac6ec90e1515ae970078e1329b4add43d65eb1fef9462c91f73bc8ae03518b7b
+  - id: 11
+    dedication:
+      worker_5: 1.0
+      worker_2: 0.75
+    distribution_hash: 467b7b5e346db81cf8b838f1dc8d22b0b0d64364330fce12fd36ea7c90e35e6f
+  - id: 12
+    dedication:
+      worker_4: 1.0
+      worker_5: 0.5
+    distribution_hash: ffdc4a6b16a3375be7920f5d0721db72b620d8741de65aafe9d960740a50fec4
+  - id: 13
+    dedication:
+      worker_4: 0.75
+      worker_5: 0.75
+    distribution_hash: d4ebb52998dd7fead69ac6e5a454ff6b5f184eac0ce4475d97190920a8069ef1
+  - id: 14
+    dedication:
+      worker_4: 1.0
+      worker_5: 1.0
+    distribution_hash: 7b90ebca7f968c4db2520749d54cef38127794f3c6262ecf8e92bd1d63cbae5e
+  - id: 15
+    dedication:
+      worker_3: 0.75
+      worker_5: 1.0
+    distribution_hash: 570c452af4ccdbd42588ec74e17df7b87fe6a2ad17e98861f357e0879504ec2d
+  - id: 16
+    dedication:
+      worker_3: 0.5
+      worker_5: 1.0
+    distribution_hash: ae1b2b58d2eccc1a76e12fe92084d0ea08e4d4346d1d59c72a3d57d6f6672457
+- id: task_14
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 0.75
+      worker_2: 0.5
+      worker_1: 0.5
+    distribution_hash: c5d95bd56b96de5dade695fcc4abcb50f7e5e7b856a5f0a1e2c86c662776530f
+  - id: 2
+    dedication:
+      worker_6: 1.0
+      worker_2: 0.5
+      worker_1: 1.0
+    distribution_hash: 7856b033e087405802f73e69e25611c57cbb268e8691c546f94249ef8f7fd858
+- id: task_15
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 1.0
+      worker_6: 1.0
+    distribution_hash: ae469436b88a0f6563ee36a3d0257ede1dd20f737290adbb4c3b55feba852cb1
+  - id: 2
+    dedication:
+      worker_2: 1.0
+      worker_6: 0.5
+    distribution_hash: d04b9cdac69fb4ccdb7060cf477596ab58636b20319828f2d1b80fec6a64a857
+  - id: 3
+    dedication:
+      worker_6: 1.0
+      worker_1: 0.75
+    distribution_hash: a830db50378a9f96b2ccce9715a6837b941818f8e7960ced7df5a791bf280de8
+  - id: 4
+    dedication:
+      worker_6: 1.0
+      worker_1: 1.0
+    distribution_hash: d0c1596398916170ee3a63ffb8430e7fd2b03d014c98ce0d01447a117ad6d792
+  - id: 5
+    dedication:
+      worker_6: 0.75
+      worker_1: 0.5
+    distribution_hash: 1627d79522a9e5ffc96d396d616648b3e332e5d5586749155831ba167a6f7b6b
+  - id: 6
+    dedication:
+      worker_5: 0.75
+      worker_1: 1.0
+    distribution_hash: ada3e4e56ae2090377db8391ed9aa954e7614d50caae0b5c09f607dfdbbbc75a
+  - id: 7
+    dedication:
+      worker_5: 0.75
+      worker_1: 0.75
+    distribution_hash: ced9142606053f7d8d49c38981f20341b8bd32f642b6659d02235e98430230a4
+  - id: 8
+    dedication:
+      worker_5: 1.0
+      worker_1: 1.0
+    distribution_hash: f449f5eb5229f2279d62db156c94be72c99759df4901abec3d7076c1f726758a
+  - id: 9
+    dedication:
+      worker_2: 0.75
+      worker_1: 1.0
+    distribution_hash: 596bc43db49e846df957570b1d7e5767c63cec27184bab96b5dee5149f83fc65
+  - id: 10
+    dedication:
+      worker_2: 0.5
+      worker_1: 0.75
+    distribution_hash: 6838410b6e17d87b495a5e0586274549052a713400f77df82f55496d981e4f85
+  - id: 11
+    dedication:
+      worker_2: 1.0
+      worker_1: 0.75
+    distribution_hash: 5be1c5094439c0f268822097de16a18d99dedfcd835df3d2b748d1fafd43af37
+  - id: 12
+    dedication:
+      worker_6: 0.75
+      worker_5: 0.5
+    distribution_hash: 2746b36e6c392a6bd848f03cd7312a9fbb2f985b4863cbbf6f458a8cfe845a32
+  - id: 13
+    dedication:
+      worker_6: 1.0
+      worker_5: 1.0
+    distribution_hash: 08ac3ec2f1c52fbeedaf6b6e0af344480bf324d8206ff65f04a0c2fa37120b30
+  - id: 14
+    dedication:
+      worker_5: 0.5
+      worker_2: 1.0
+    distribution_hash: 1a13ec8a557b71344751c031dfec5483553298a5b1ace2f712dcbc56230e0ee8
+  - id: 15
+    dedication:
+      worker_5: 1.0
+      worker_2: 1.0
+    distribution_hash: 49bfbb4ab551930f595e797294a4eb83db60d99ed0ed4b9b6a108b7a18a90167
+- id: task_16
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_2: 0.25
+    distribution_hash: 229badf338d2fa26fe3903c8e7aefee06e7b7275d3d2d672a928ca41f46bd1bc
+  - id: 2
+    dedication:
+      worker_2: 0.5
+    distribution_hash: 7093f72b8be56a5a58e2ab218b97182d67ea38169e1eb28d2d246ad38eb03723
+- id: task_17
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 1.0
+      worker_1: 0.5
+      worker_3: 0.75
+      worker_2: 1.0
+    distribution_hash: 591043041196e1c8e8d6c39a3376b000e136031b3ad292aeb10432768c73c74c
+  - id: 2
+    dedication:
+      worker_6: 0.75
+      worker_1: 1.0
+      worker_3: 1.0
+      worker_2: 1.0
+    distribution_hash: d777f6a1c5c4d84af2b739cb611189165ef51a5d0e791404bb41330e86db8412
+  - id: 3
+    dedication:
+      worker_6: 0.75
+      worker_1: 1.0
+      worker_3: 0.5
+      worker_2: 0.5
+    distribution_hash: c85d16977f52405fe6dde0dd4da7ffc64f882d268d1fdda5807da8babb29504c
+- id: task_18
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_3: 1.0
+      worker_4: 1.0
+      worker_6: 1.0
+      worker_7: 0.5
+    distribution_hash: bc3e760ee41257ff62729275c0a3799e532948fc98ba2aea29ccf7ac0adcc854
+  - id: 2
+    dedication:
+      worker_4: 1.0
+      worker_1: 1.0
+      worker_6: 1.0
+      worker_7: 0.25
+    distribution_hash: 1ba307146f35e864220af462b38f9c7f5b092ae4c1ef26ba78b131c97e65a093
+  - id: 3
+    dedication:
+      worker_4: 1.0
+      worker_1: 1.0
+      worker_6: 1.0
+      worker_7: 0.5
+    distribution_hash: f6f4b3edd04c398a905d0cd9811c2893e9e33ad7d9516c0e58d772564095004e
+- id: task_19
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_5: 0.5
+      worker_3: 1.0
+    distribution_hash: 64d6488dac2f7bc63b4b0e02f58f6ebd9f611df520bf5a33d3dd3fe0b5c3696d
+  - id: 2
+    dedication:
+      worker_5: 0.5
+      worker_3: 0.75
+    distribution_hash: 0a39c96f95722e4f801f9796f9987a520717151c2c6d0b8b1c2cbcc6f4b75bb7
+  - id: 3
+    dedication:
+      worker_5: 0.75
+      worker_3: 0.75
+    distribution_hash: 890ea46933b4915e40ec3ecadef7b6782808eca935a9dae431ee3b4f168ccd8a
+  - id: 4
+    dedication:
+      worker_2: 0.5
+      worker_3: 0.5
+    distribution_hash: 4f1c71b18a0e9b18d854b134e55fbf794c28d6fa3ae52ee436d6a9eaac1e5c25
+  - id: 5
+    dedication:
+      worker_2: 0.5
+      worker_3: 0.75
+    distribution_hash: 4227c165f0d76083fa3234ec30db32739f3d217e3aecde5fd63641bea2f13dbf
+  - id: 6
+    dedication:
+      worker_5: 1.0
+      worker_2: 0.5
+    distribution_hash: 86b1653befac5aecc258e6534716c95917793815e05c16887cf58783c0d8dc34
+  - id: 7
+    dedication:
+      worker_5: 0.75
+      worker_2: 1.0
+    distribution_hash: f8d8be72c05448378ca213a331202475ba7bb9f1fbc5b7b56aded9536dcec1a1
+- id: task_20
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_1: 1.0
+      worker_2: 0.75
+      worker_6: 0.75
+    distribution_hash: 36221525cae6d432a93e06911cd0345726a1494f96947723c7748b5f32e634fa
+  - id: 2
+    dedication:
+      worker_1: 1.0
+      worker_2: 1.0
+      worker_6: 0.75
+    distribution_hash: c547cfdc6811ad970f35d5eb49b7d7438081ce9ecdd8ecd86ff8ce8c5ce007e1
+  - id: 3
+    dedication:
+      worker_1: 0.5
+      worker_2: 0.75
+      worker_6: 1.0
+    distribution_hash: af473406bffa83cd7e44564adc90e77eaef8288b95a1e0f719c54b23bccb8a72
+  - id: 4
+    dedication:
+      worker_3: 1.0
+      worker_2: 0.75
+      worker_6: 1.0
+    distribution_hash: 7a7e35bebfdc24de4359cb111084873d4cbaaaec5aacd457023381ca498b46ab
+  - id: 5
+    dedication:
+      worker_3: 0.5
+      worker_2: 0.75
+      worker_6: 0.75
+    distribution_hash: ad3c1f4f9823075e745070a23176bbfd7c808c2ea6e6b20775258985b40837cd
+  - id: 6
+    dedication:
+      worker_3: 0.75
+      worker_2: 1.0
+      worker_6: 0.75
+    distribution_hash: d82c3000a2d7c67e5bed53c699f42dc55dec838ff9c538fa90adb8806d060b66
+- id: task_21
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 0.75
+      worker_5: 1.0
+      worker_3: 0.75
+      worker_2: 1.0
+    distribution_hash: 69eb53786fc28543a7092b7415dd102de7457537793a00515de8c18cf785b163
+  - id: 2
+    dedication:
+      worker_4: 1.0
+      worker_5: 1.0
+      worker_3: 1.0
+      worker_2: 1.0
+    distribution_hash: 1658e2f474ce58ded6f1ea0eb869c9f00e2e9afe322b8af83fdb26681efe5358
+  - id: 3
+    dedication:
+      worker_4: 1.0
+      worker_5: 0.75
+      worker_3: 1.0
+      worker_2: 1.0
+    distribution_hash: ed16298914f89d97ca8b4d8e7fead2ace5abfb328d874174291a94c516e0d63f
+- id: task_22
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 1.0
+      worker_4: 1.0
+      worker_3: 1.0
+    distribution_hash: 0f6989c425f964359658ae6eb57b9771d21e30e16ea8d0f03aea0cb9d4d9551d
+  - id: 2
+    dedication:
+      worker_4: 1.0
+      worker_1: 1.0
+      worker_6: 1.0
+    distribution_hash: 96348a05c6188a294113e4ddca96423c0bbe3ecc62b05eab2584b27a44d2415a
+- id: task_23
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_1: 1.0
+    distribution_hash: ed9f78f508d213d34147be5ffa3d87cf4263f50f23375c2e34d1b8dc58df5918
+  - id: 2
+    dedication:
+      worker_4: 1.0
+    distribution_hash: 79ae8f1a03603b2053ada9309b61bf1f68f65dae34723fc2ac7b8c8cdae34fad
+  - id: 3
+    dedication:
+      worker_6: 1.0
+    distribution_hash: 500fc1aa3544583c4ad9cc3538acfad8fb16e0e9d18880589df99752bd49e4ed
+  - id: 4
+    dedication:
+      worker_3: 1.0
+    distribution_hash: d296b474851d9456f92732918df610ba8af2ac05110a351c9573008f6af57b6d
+- id: task_24
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 1.0
+      worker_3: 1.0
+      worker_4: 1.0
+    distribution_hash: de57d8e8b3c348f72f32dfcf1584ea94dda3e2ac825e63162358b13003e67770
+  - id: 2
+    dedication:
+      worker_1: 1.0
+      worker_4: 1.0
+      worker_6: 1.0
+    distribution_hash: bcf927a7d67b617188a0e1dc00a814a1a4623a88a767ee5cdcb628cc445fb07e
+- id: task_25
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_1: 1.0
+      worker_2: 1.0
+      worker_5: 0.5
+      worker_7: 0.5
+    distribution_hash: ef8171f3b95398206a4379fd27ab96e11179ebf66f12bbc5978599436f431a02
+  - id: 2
+    dedication:
+      worker_1: 1.0
+      worker_2: 0.75
+      worker_5: 1.0
+      worker_7: 0.25
+    distribution_hash: f3cc7003da5924672d2f8edb5e35ddfe26ede66b89245d609e1accacb8cb94cd
+  - id: 3
+    dedication:
+      worker_1: 0.5
+      worker_2: 0.75
+      worker_5: 0.75
+      worker_7: 0.25
+    distribution_hash: 55fb268bf7963830ce894ddd3582921784e68b3fed764341438a58bba6a2eab7
+  - id: 4
+    dedication:
+      worker_6: 0.5
+      worker_1: 0.5
+      worker_5: 1.0
+      worker_7: 0.5
+    distribution_hash: 396ab54a67f34c1a1cc3c62ca907faf631e6bb0d9feeed1a50fc52447c9094fb
+  - id: 5
+    dedication:
+      worker_6: 0.5
+      worker_1: 0.75
+      worker_5: 0.75
+      worker_7: 0.25
+    distribution_hash: 175ab947a3ec853916e8be56158c0cae0d39c2a66f824737b168ae2d6cb58dbc
+  - id: 6
+    dedication:
+      worker_6: 0.75
+      worker_1: 1.0
+      worker_5: 1.0
+      worker_7: 0.5
+    distribution_hash: b6ffc277b6a5832afe047cc857a63aa7ce16d35fae8f40a9f9cc2d247d1432e7
+  - id: 7
+    dedication:
+      worker_6: 1.0
+      worker_5: 0.5
+      worker_2: 1.0
+      worker_7: 0.5
+    distribution_hash: 628386a95d052baac1f2c898354b09d79d24602f1a7f55a8fcf90d0b44edf4d7
+  - id: 8
+    dedication:
+      worker_6: 0.75
+      worker_5: 0.5
+      worker_2: 0.75
+      worker_7: 0.25
+    distribution_hash: 17adc18347b84c9b12704ba5da5db604d142431173d6bd1dc4caefd8709e4124
+  - id: 9
+    dedication:
+      worker_6: 1.0
+      worker_5: 1.0
+      worker_2: 1.0
+      worker_7: 0.25
+    distribution_hash: 0bc1aa355bb1fe1a827b98ab87c0f48735a69a0a2a73472b71b9299c23fd6f33
+  - id: 10
+    dedication:
+      worker_1: 0.75
+      worker_6: 1.0
+      worker_2: 1.0
+      worker_7: 0.25
+    distribution_hash: c704b955e5c7280e74c461b5d4906321588621e9fb7f4ab9d13eaf929ab393a4
+  - id: 11
+    dedication:
+      worker_1: 1.0
+      worker_6: 0.75
+      worker_2: 0.75
+      worker_7: 0.5
+    distribution_hash: 38b82b6168b4db8f2e3fb784b90fb334a1c708dd729c0d06e26859cd70c710a7
+  - id: 12
+    dedication:
+      worker_1: 1.0
+      worker_6: 0.5
+      worker_2: 1.0
+      worker_7: 0.25
+    distribution_hash: e85888dbe5dea473861a90c4c88384e43488aeb5d2535e69fcd1bbeb8586e775
+- id: task_26
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_4: 0.75
+      worker_7: 0.5
+    distribution_hash: 49bcdb48ee471b5269656b2f98350c18f2894ab3e32441fef20657173b0e9719
+  - id: 2
+    dedication:
+      worker_4: 1.0
+      worker_7: 0.5
+    distribution_hash: 43fca97f94d8726911f3079c06c518fecca9e5185fa9e542595e73ae0388d2a2
+  - id: 3
+    dedication:
+      worker_3: 1.0
+      worker_7: 0.25
+    distribution_hash: 650071f04e31726ef534a52c4c08243c44a3907cf457487d9f5d22c1e0a70e1e
+  - id: 4
+    dedication:
+      worker_3: 0.5
+      worker_7: 0.25
+    distribution_hash: 4be8d866b0bb7767e037d31c02472d0a20657657e2619880d53e894daed5d6d9
+  - id: 5
+    dedication:
+      worker_2: 1.0
+      worker_7: 0.5
+    distribution_hash: b04fd89e40b5387ba2c5847ded288071ef8f7d55d5283fad8ed3aa11ddd5d0c4
+  - id: 6
+    dedication:
+      worker_2: 0.75
+      worker_7: 0.25
+    distribution_hash: 16b0be6e5acbaeceab55db970a8eb61c541ee4e350fd9a7ec0d8648667a52424
+  - id: 7
+    dedication:
+      worker_2: 0.75
+      worker_7: 0.5
+    distribution_hash: 8c1421f6275d5d3bcc89e54bfb1e3fe8212641ef22775e65091526d0c5f4c9dd
+- id: task_27
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_1: 0.75
+      worker_2: 0.75
+      worker_6: 1.0
+      worker_5: 1.0
+    distribution_hash: e3543f45b199d9933131bbe8a70815b3820203e52310e1568e7ace0fcd95bc79
+  - id: 2
+    dedication:
+      worker_1: 1.0
+      worker_2: 1.0
+      worker_6: 1.0
+      worker_5: 0.75
+    distribution_hash: 31b687f72632cf64fdcc9c01957f5780635e917a80be61e132e8fd8002261e3e
+  - id: 3
+    dedication:
+      worker_1: 1.0
+      worker_2: 0.75
+      worker_6: 1.0
+      worker_5: 1.0
+    distribution_hash: 740d7a18fdc38c30c34a636d8496dcb10c156792ec464f968242504767696953
+- id: task_28
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_3: 0.75
+      worker_5: 0.5
+      worker_4: 1.0
+      worker_2: 0.5
+    distribution_hash: 12e1e5c79a535d4b5ccf1da61ced1899b9af461ee6977192939b2079555ecda9
+  - id: 2
+    dedication:
+      worker_3: 1.0
+      worker_5: 0.5
+      worker_4: 1.0
+      worker_2: 1.0
+    distribution_hash: ef7057550fd5159dcbe981f6db05681cc3ee361aa17eaef755678287f758998b
+  - id: 3
+    dedication:
+      worker_3: 0.75
+      worker_5: 1.0
+      worker_4: 1.0
+      worker_2: 0.5
+    distribution_hash: 33aa55630fb89ae4bc57d12caa28540990561f42558970cae252b2794d950190
+- id: task_29
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 1.0
+    distribution_hash: 45a2d5b37c1efc7b17c0305a9577312630fc50331efe6813122c10967d5921e8
+  - id: 2
+    dedication:
+      worker_4: 1.0
+    distribution_hash: 83fffefb92f6710951f27bf413de7f32e04868b62291770c74a2f0f1add6f17f
+  - id: 3
+    dedication:
+      worker_1: 1.0
+    distribution_hash: 3c0cc5a8d162c456363f419605b1eb52c734b3b98cf434f87e613ad6a9766446
+- id: task_30
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_6: 1.0
+      worker_1: 1.0
+      worker_3: 1.0
+      worker_4: 1.0
+    distribution_hash: 8c70d0951318619ef5b7a5c452972a5bb371e962b04637c44522394481a84d51
+- id: task_31
+  milestone: false
+  modes:
+  - id: 1
+    dedication:
+      worker_1: 0.75
+      worker_6: 0.75
+    distribution_hash: 67f44940e56112d04a4e0e67d81a07b683e4d74324c85d704000f97da3735fe9
+  - id: 2
+    dedication:
+      worker_1: 0.5
+      worker_6: 1.0
+    distribution_hash: 8915807da2c15c409ed64d298221e741fe33f2021c1852f0b4de2e2f8a864fe8
+  - id: 3
+    dedication:
+      worker_1: 0.75
+      worker_6: 1.0
+    distribution_hash: 82da16fbc09d7523aa7d6e4bf38afc8dbca53e1922cf1731e64c0afeed58c3ca
+  - id: 4
+    dedication:
+      worker_3: 1.0
+      worker_2: 1.0
+    distribution_hash: a39c6c40dffb431b16df5521de7feb9bd2e1440aee3039b162692834c9be209c
+  - id: 5
+    dedication:
+      worker_3: 1.0
+      worker_2: 0.5
+    distribution_hash: 6e73750bf2114452a4b545a64eb0f0b0df3c42e315b5bc37cf18a87dbc15d4cb
+  - id: 6
+    dedication:
+      worker_3: 1.0
+      worker_2: 0.75
+    distribution_hash: 49ca3287c43ebf57202886e51cf761e11f4263772b30d825b9a0b631ce996ff7
+  - id: 7
+    dedication:
+      worker_3: 1.0
+      worker_6: 0.5
+    distribution_hash: 8a428336f4788fd176824a0abc1b035099a13456bbb19fc2273467e0e7e55022
+  - id: 8
+    dedication:
+      worker_3: 1.0
+      worker_6: 1.0
+    distribution_hash: d2ae538d9bde899906794d9ccfc264fe0bd99da94657d22b7aa50b98e61846a3
+  - id: 9
+    dedication:
+      worker_3: 1.0
+      worker_6: 0.75
+    distribution_hash: 82f1df182a43ae9eb05cb8083a385f44c231dad481aaadcc6de04ad3f622c49b
+  - id: 10
+    dedication:
+      worker_6: 1.0
+      worker_2: 1.0
+    distribution_hash: 35a4d38bc9f77420f0fd7ff5bf3cc46cc8c116c50ed8465f988b06acf13df030
+  - id: 11
+    dedication:
+      worker_6: 0.5
+      worker_2: 1.0
+    distribution_hash: 6b63efcfa578c4753b46892db80b5264c9037ff2c34268d08867c999b3948727
+  - id: 12
+    dedication:
+      worker_6: 1.0
+      worker_2: 0.75
+    distribution_hash: 8c8f78ad9e950e43c4ecb86ecf49ebc97c5d66cc56e12a73485f130085f4e2d1
+  - id: 13
+    dedication:
+      worker_1: 1.0
+      worker_2: 1.0
+    distribution_hash: 972a3f27c63677a6e339e834656165f15acdaed7624decaf9a7db9a994c3bc70
+  - id: 14
+    dedication:
+      worker_1: 1.0
+      worker_2: 0.5
+    distribution_hash: f49f4366be382b75edcbc3a6c7cf7f1b81cc80ce9af97ed25250b91e56dce210
+  - id: 15
+    dedication:
+      worker_1: 1.0
+      worker_2: 0.75
+    distribution_hash: 52bad167176ac594b170ed2e34c4cdaf96d56705f2c6c6f510be73b70e1d19a3
+- id: task_32
+  milestone: true
+  modes:
+  - id: 1
+    dedication: {}
+    distribution_hash: adebb98633477e150d5b30bc4d40109880125255f02e19b56fb44339244b0fa5
+tpg_edges:
+- - task_1
+  - task_2
+- - task_1
+  - task_3
+- - task_1
+  - task_4
+- - task_1
+  - task_5
+- - task_1
+  - task_6
+- - task_1
+  - task_9
+- - task_1
+  - task_10
+- - task_1
+  - task_11
+- - task_1
+  - task_25
+- - task_1
+  - task_26
+- - task_1
+  - task_27
+- - task_1
+  - task_28
+- - task_1
+  - task_29
+- - task_1
+  - task_30
+- - task_1
+  - task_31
+- - task_2
+  - task_13
+- - task_2
+  - task_16
+- - task_2
+  - task_17
+- - task_2
+  - task_18
+- - task_2
+  - task_23
+- - task_2
+  - task_24
+- - task_3
+  - task_15
+- - task_3
+  - task_16
+- - task_3
+  - task_19
+- - task_3
+  - task_20
+- - task_3
+  - task_21
+- - task_4
+  - task_13
+- - task_4
+  - task_16
+- - task_4
+  - task_20
+- - task_4
+  - task_22
+- - task_5
+  - task_19
+- - task_6
+  - task_8
+- - task_7
+  - task_13
+- - task_7
+  - task_17
+- - task_8
+  - task_12
+- - task_9
+  - task_15
+- - task_10
+  - task_12
+- - task_11
+  - task_14
+- - task_28
+  - task_15
+- - task_27
+  - task_7
+- - task_27
+  - task_22
+- - task_4
+  - task_7
+- - task_10
+  - task_13
+- - task_6
+  - task_16
+- - task_29
+  - task_17
+- - task_5
+  - task_16
+- - task_12
+  - task_32
+- - task_13
+  - task_32
+- - task_14
+  - task_32
+- - task_15
+  - task_32
+- - task_16
+  - task_32
+- - task_17
+  - task_32
+- - task_18
+  - task_32
+- - task_19
+  - task_32
+- - task_20
+  - task_32
+- - task_21
+  - task_32
+- - task_22
+  - task_32
+- - task_23
+  - task_32
+- - task_24
+  - task_32
+- - task_25
+  - task_32
+- - task_26
+  - task_32
+- - task_30
+  - task_32
+- - task_31
+  - task_32
+deadline:
+  delta: 735
+validation:
+  project_key: 4f1d1c0df2f9f56c94a3e821eb28a481485f444b68a8b678907776079d3c6a0d
+  is_correct: true
+  is_trivial: false
+  classification: unclassified
+  errors: []
+  reasons:
+  - 'Shortest critical path: 88 days; worst-case serial bound: 2373 days'
+  - Neither deadline bounds nor structural checks decide triviality
+  structural_flags: []
+  validation_version: 6
+```

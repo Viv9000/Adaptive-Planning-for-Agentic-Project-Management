@@ -1,0 +1,11 @@
+# The versions of the paper's evaluation runs (Python 3.11, CPU only).
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.4.6
+scipy==1.17.1
+torch==2.15.0+cpu
+ortools==9.14.6206
+PyYAML>=6.0
+# Optional: approximate prompt token counts in the LLM method's prepare stage.
+tiktoken>=0.9
+# Optional: generating policies with the Bedrock models (DeepSeek V3.2, Kimi K3.1).
+boto3>=1.34

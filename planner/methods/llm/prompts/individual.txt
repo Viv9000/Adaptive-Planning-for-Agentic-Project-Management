@@ -1,0 +1,11 @@
+Design a scheduler specialized for THIS project, supplied below in full.
+The precedence graph, allowed modes, teams, dedications, PERT parameters and
+deadline are fixed. Only execution-duration realizations vary between episodes;
+those realizations remain unknown during preparation.
+You may exploit the complete project's structure in preprocessing or selection.
+The same project is also supplied to build_policy at runtime.
+No performance feedback or later revisions will be provided.
+Return one complete implementation for this project.
+
+PUBLIC PROJECT
+{project}

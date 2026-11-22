@@ -1,0 +1,221 @@
+{
+  "instance": "MSLIB_Set4_82",
+  "group": "S",
+  "scenario": "scenario_w5_t32_s0_seed0_b308b878.md",
+  "scenario_sha256": "01cec9c5120e780326444069c04763b2c8b1572eb95e7ffbf986d62584fca2c7",
+  "deadline": 697,
+  "reference": {
+    "plan": {
+      "completion": 558,
+      "starts": {
+        "task_1": {
+          "day": 0,
+          "mode": 1
+        },
+        "task_2": {
+          "day": 18,
+          "mode": 1
+        },
+        "task_3": {
+          "day": 204,
+          "mode": 4
+        },
+        "task_4": {
+          "day": 133,
+          "mode": 1
+        },
+        "task_5": {
+          "day": 63,
+          "mode": 5
+        },
+        "task_6": {
+          "day": 204,
+          "mode": 4
+        },
+        "task_7": {
+          "day": 213,
+          "mode": 7
+        },
+        "task_8": {
+          "day": 0,
+          "mode": 2
+        },
+        "task_9": {
+          "day": 0,
+          "mode": 2
+        },
+        "task_10": {
+          "day": 497,
+          "mode": 1
+        },
+        "task_11": {
+          "day": 175,
+          "mode": 3
+        },
+        "task_12": {
+          "day": 268,
+          "mode": 3
+        },
+        "task_13": {
+          "day": 397,
+          "mode": 3
+        },
+        "task_14": {
+          "day": 288,
+          "mode": 3
+        },
+        "task_15": {
+          "day": 191,
+          "mode": 2
+        },
+        "task_16": {
+          "day": 375,
+          "mode": 8
+        },
+        "task_17": {
+          "day": 265,
+          "mode": 6
+        },
+        "task_18": {
+          "day": 196,
+          "mode": 1
+        },
+        "task_19": {
+          "day": 315,
+          "mode": 7
+        },
+        "task_20": {
+          "day": 374,
+          "mode": 1
+        },
+        "task_21": {
+          "day": 461,
+          "mode": 1
+        },
+        "task_22": {
+          "day": 345,
+          "mode": 5
+        },
+        "task_23": {
+          "day": 113,
+          "mode": 1
+        },
+        "task_24": {
+          "day": 535,
+          "mode": 1
+        },
+        "task_25": {
+          "day": 58,
+          "mode": 10
+        },
+        "task_26": {
+          "day": 83,
+          "mode": 1
+        },
+        "task_27": {
+          "day": 294,
+          "mode": 1
+        },
+        "task_28": {
+          "day": 299,
+          "mode": 4
+        },
+        "task_29": {
+          "day": 24,
+          "mode": 3
+        },
+        "task_30": {
+          "day": 196,
+          "mode": 4
+        },
+        "task_31": {
+          "day": 39,
+          "mode": 8
+        },
+        "task_32": {
+          "day": 558,
+          "mode": 1
+        }
+      }
+    },
+    "status": "OPTIMAL",
+    "bound": 558.0,
+    "seconds": 6.5211093830000095
+  },
+  "settings": {
+    "deadline_reference": "full",
+    "reference_seconds": 300,
+    "solver_threads": 8,
+    "generator": {
+      "seed": 0,
+      "time_unit": 4,
+      "mode_cap": 32,
+      "uncertainty": 2.0,
+      "mode_factor_sigma": 0.15,
+      "level_effect": 0.1,
+      "efficiency_bounds": [
+        0.7,
+        1.4
+      ],
+      "risk_classes": [
+        [
+          0.5,
+          0.1,
+          0.3
+        ],
+        [
+          0.35,
+          0.15,
+          0.6
+        ],
+        [
+          0.15,
+          0.2,
+          1.2
+        ]
+      ],
+      "mode_spread_jitter": 0.3,
+      "speed_risk_exponent": 3.0,
+      "department_size": 6,
+      "cross_department_share": 0.1,
+      "dedication_levels": [
+        0.5,
+        0.75,
+        1.0
+      ],
+      "dedication_weights": [
+        0.2,
+        0.3,
+        0.5
+      ],
+      "safety_skill": true,
+      "constraints": true,
+      "reviewer": true,
+      "extra_workers": true,
+      "liaison": true,
+      "rewire": true,
+      "barred_share": 0.05,
+      "incompatible_pairs_per_worker": 0.1,
+      "review_task_share": 0.15,
+      "quality_share": 0.15,
+      "review_dedication": [
+        0.25,
+        0.5
+      ],
+      "extra_share": 0.3,
+      "extra_overhead": 0.1,
+      "extra_floor": 0.75,
+      "liaison_task_share": 0.1,
+      "liaison_dedication": [
+        0.25,
+        0.5
+      ],
+      "liaison_upper_spread": 2.0,
+      "rewire_share": 0.3,
+      "long_range_share": 0.3333333333333333,
+      "dedication_variants": 3,
+      "separate_quality_from": 12,
+      "attempts_per_mode": 30
+    }
+  }
+}

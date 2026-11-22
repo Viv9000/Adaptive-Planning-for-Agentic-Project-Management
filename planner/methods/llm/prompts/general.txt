@@ -1,0 +1,11 @@
+Design one reusable scheduler for the {group} size group.
+Both groups have 30 real tasks plus two zero-duration milestones, and at most
+32 modes per task. S has 5-12 workers and M has 17-61 in the current generated data.
+Read actual dimensions from inputs; do not hard-code these sizes or identifiers.
+Different projects have different DAGs, teams, dedications, mode-dependent risks
+and deadlines. Faster modes can have longer right tails. Workers overlap across
+teams and precedence graphs may contain several near-critical paths.
+Your frozen source will receive each unseen test project through build_policy.
+It may preprocess that project, but this generation sees no test project data.
+The synthetic example illustrates the interface only. No performance feedback
+or later revisions will be provided. Return one complete reusable implementation.
